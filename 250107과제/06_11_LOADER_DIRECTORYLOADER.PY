@@ -1,8 +1,12 @@
 from langchain_community.document_loaders import DirectoryLoader
 
-loader = DirectoryLoader("C:\\Users\\SANGMIN\\OneDrive\\문서\\GitHub\\test_jju\\250107과제\\data_all", glob="**/*.md")
+# 경로를 raw string(r)으로 지정
+loader = DirectoryLoader(
+    r"C:\Users\SANGMIN\OneDrive\문서\GitHub\test_jju",
+    glob="**/*.md"
+)
 
 docs = loader.load()
 
 print(len(docs))
-# print(docs[0].page_content[:100])
+print(docs[0].page_content[:100])
